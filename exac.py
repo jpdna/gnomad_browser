@@ -76,6 +76,23 @@ READ_VIZ_DIRECTORY = '../data/readviz'
 REGION_LIMIT = 1E5
 EXON_PADDING = 50
 # Load default config and override config from an environment variable
+
+
+SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
+EXOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/exomes"
+GENOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/genomes"
+
+
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.vcf.gz'))
+GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
+
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.head10000.vcf.gz'))
+#GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.head10000.vcf.gz'))
+
+
+print "### This is GENOME_SITES_VCFS right after it is assigned: " + str(GENOMES_SITES_VCFS) + "\n"
+print "### This is EXOME_SITES_VCFS right after it is assigned: " + str(EXOMES_SITES_VCFS) + "\n"
+
 app.config.update(dict(
     DB_HOST='localhost',
     DB_PORT=27017,
@@ -86,7 +103,6 @@ app.config.update(dict(
     # contigs assigned to threads, so good to make this a factor of 24 (eg. 2,3,4,6,8)
     EXOMES_SITES_VCFS=EXOMES_SITES_VCFS,
     GENOMES_SITES_VCFS=GENOMES_SITES_VCFS,
-    # GENOMES_SITES_VCFS=glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'one_gene/*.gz')),
     GENCODE_GTF=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'gencode.gtf.gz'),
     CANONICAL_TRANSCRIPT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'canonical_transcripts.txt.gz'),
     OMIM_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'omim_info.txt.gz'),
@@ -95,14 +111,16 @@ app.config.update(dict(
     DBNSFP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbNSFP2.6_gene.gz'),
     CONSTRAINT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'forweb_cleaned_exac_r03_march16_z_data_pLI_CNV-final.txt.gz'),
     MNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'MNPs_NotFiltered_ForBrowserRelease.txt.gz'),
-    CNV_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-gencode-exon.cnt.final.pop3'),
-    CNV_GENE_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-final-cnvs.gene.rank'),
+    #CNV_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-gencode-exon.cnt.final.pop3'),
+    #CNV_GENE_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-final-cnvs.gene.rank'),
 
     # How to get a dbsnp142.txt.bgz file:
     #   wget ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606_b142_GRCh37p13/database/organism_data/b142_SNPChrPosOnRef_105.bcp.gz
     #   zcat b142_SNPChrPosOnRef_105.bcp.gz | awk '$3 != ""' | perl -pi -e 's/ +/\t/g' | sort -k2,2 -k3,3n | bgzip -c > dbsnp142.txt.bgz
     #   tabix -s 2 -b 3 -e 3 dbsnp142.txt.bgz
-    DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.txt.bgz'),
+    #
+    #DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.txt.bgz'),
+    DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.chr22.txt.bgz'),
 
     #READ_VIZ_DIR=os.path.abspath(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, "readviz")),
     READ_VIZ_DIR=os.path.abspath(READ_VIZ_DIRECTORY),
@@ -275,6 +293,7 @@ def load_exome_variants():
 
 def load_genome_variants():
     genomes_sites_vcfs = app.config['GENOMES_SITES_VCFS']
+    print "### This is genome sites_Vcfs: " + str(genomes_sites_vcfs) + "\n"
     load_variants(genomes_sites_vcfs, 'genome_variants')
 
 def drop_exome_variants():
@@ -558,7 +577,11 @@ def precalculate_metrics(variant_collection, metric_collection, chrom=None):
         if chrom is not None and variant["chrom"] != chrom:
             continue
         for metric, value in variant['quality_metrics'].iteritems():
-            metrics[metric].append(float(value))
+            #print "################"
+            #print "### This is value: " + str(value) + "\n"
+            #print "### This is variant: " + str(variant) + "\n"
+            if not value == ".":
+                metrics[metric].append(float(value))
         qual = float(variant['site_quality'])
         metrics['site_quality'].append(qual)
         if variant['allele_num'] == 0: continue
@@ -774,11 +797,27 @@ def variant_data(variant_str, source):
 def variant_page(variant_str):
     try:
         exac = variant_data(variant_str, 'exac')
+
+
+        #print "#### Here we are assignin the exac variable inside of variants endpoint: " + str(exac)
         gnomad = variant_data(variant_str, 'gnomad')
+
+        #exac['variant']['pop_acs']['European (Non-Finnish)'] = 5
+        #gnomad['variant']['pop_acs']['European (Non-Finnish)'] = 5
+        #print "#### Print European (Non-Finnish) allele count: " + str(exac['variant']['pop_acs']['European (Non-Finnish)'])
+        #print "#### Print European (Non-Finnish) allele count: " + str(gnomad['variant']['pop_acs']['European (Non-Finnish)'])
+
+
+
         print 'Rendering variant: %s' % variant_str
+
+        #if not 'variant_id' in exac['variant']:
+        #    raise "could not find in exec"
+
         return render_template(
             'variant.html',
             variant=(exac['variant'] if 'variant_id' in exac['variant'] else gnomad['variant']),
+            #variant=exac['variant'],  #if 'variant_id' in exac['variant'] else },
             exac=exac,
             gnomad=gnomad,
             any_covered=(exac['any_covered'] or gnomad['any_covered']),  # if this variant is in gnomad, consider it covered
