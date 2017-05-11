@@ -52,6 +52,7 @@ MONGO_HOST = os.getenv('MONGO_HOST', 'mongo')
 MONGO_PORT = os.getenv('MONGO_PORT', 27017)
 MONGO_URL = 'mongodb://%s:%s' % (MONGO_HOST, MONGO_PORT)
 
+'''
 if DEPLOYMENT_ENVIRONMENT == 'development':
      EXOME_FILES_DIRECTORY = '/Users/msolomon/Projects/exacg/feb2017releasetestdata/170226/exomes/'
      GENOME_FILES_DIRECTORY = '/Users/msolomon/Projects/exacg/feb2017releasetestdata/170226/genomes/'
@@ -69,30 +70,20 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
     GENOME_FILES_DIRECTORY = '/var/data/loading_data/genomes'
     EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, os.getenv('EXOMES_SINGLE_VCF_TEST')))
     GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, os.getenv('GENOMES_VCF_GLOB_TEST')))
+'''
 
-SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
+EXOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/exomes"
+GENOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/genomes"
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.vcf.gz'))
+GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
+
+#SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
+SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
 READ_VIZ_DIRECTORY = '../data/readviz'
 
 REGION_LIMIT = 1E5
 EXON_PADDING = 50
 # Load default config and override config from an environment variable
-
-
-SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
-EXOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/exomes"
-GENOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/genomes"
-
-
-EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.vcf.gz'))
-GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
-
-#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.head10000.vcf.gz'))
-#GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.head10000.vcf.gz'))
-
-
-print "### This is GENOME_SITES_VCFS right after it is assigned: " + str(GENOMES_SITES_VCFS) + "\n"
-print "### This is EXOME_SITES_VCFS right after it is assigned: " + str(EXOMES_SITES_VCFS) + "\n"
-
 app.config.update(dict(
     DB_HOST='localhost',
     DB_PORT=27017,
@@ -293,7 +284,6 @@ def load_exome_variants():
 
 def load_genome_variants():
     genomes_sites_vcfs = app.config['GENOMES_SITES_VCFS']
-    print "### This is genome sites_Vcfs: " + str(genomes_sites_vcfs) + "\n"
     load_variants(genomes_sites_vcfs, 'genome_variants')
 
 def drop_exome_variants():
@@ -577,9 +567,6 @@ def precalculate_metrics(variant_collection, metric_collection, chrom=None):
         if chrom is not None and variant["chrom"] != chrom:
             continue
         for metric, value in variant['quality_metrics'].iteritems():
-            #print "################"
-            #print "### This is value: " + str(value) + "\n"
-            #print "### This is variant: " + str(variant) + "\n"
             if not value == ".":
                 metrics[metric].append(float(value))
         qual = float(variant['site_quality'])
@@ -797,27 +784,11 @@ def variant_data(variant_str, source):
 def variant_page(variant_str):
     try:
         exac = variant_data(variant_str, 'exac')
-
-
-        #print "#### Here we are assignin the exac variable inside of variants endpoint: " + str(exac)
         gnomad = variant_data(variant_str, 'gnomad')
-
-        #exac['variant']['pop_acs']['European (Non-Finnish)'] = 5
-        #gnomad['variant']['pop_acs']['European (Non-Finnish)'] = 5
-        #print "#### Print European (Non-Finnish) allele count: " + str(exac['variant']['pop_acs']['European (Non-Finnish)'])
-        #print "#### Print European (Non-Finnish) allele count: " + str(gnomad['variant']['pop_acs']['European (Non-Finnish)'])
-
-
-
         print 'Rendering variant: %s' % variant_str
-
-        #if not 'variant_id' in exac['variant']:
-        #    raise "could not find in exec"
-
         return render_template(
             'variant.html',
             variant=(exac['variant'] if 'variant_id' in exac['variant'] else gnomad['variant']),
-            #variant=exac['variant'],  #if 'variant_id' in exac['variant'] else },
             exac=exac,
             gnomad=gnomad,
             any_covered=(exac['any_covered'] or gnomad['any_covered']),  # if this variant is in gnomad, consider it covered
