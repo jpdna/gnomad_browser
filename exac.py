@@ -72,10 +72,22 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
     GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, os.getenv('GENOMES_VCF_GLOB_TEST')))
 '''
 
-EXOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/exomes"
-GENOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/genomes"
-EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.vcf.gz'))
+#EXOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/exomes"
+#GENOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/genomes"
+EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+GENOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.head10000.vcf.gz'))
+
+
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.minimal.3.vcf.gz'))
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'sept25_chr22.vep.vcf.gz'))
+
+
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.head10000.vcf.gz'))
+
 GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
+EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data/"
+
 
 #SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
 SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
@@ -97,7 +109,11 @@ app.config.update(dict(
     GENCODE_GTF=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'gencode.gtf.gz'),
     CANONICAL_TRANSCRIPT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'canonical_transcripts.txt.gz'),
     OMIM_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'omim_info.txt.gz'),
-    EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'exacv2.*.cov.txt.gz')),
+
+
+    #EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'exacv2.*.cov.txt.gz')),
+    EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'sept25_chr22.cov.txt.gz')),
+
     GENOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'coverage', 'gnomad.*.cov.txt.gz')),
     DBNSFP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbNSFP2.6_gene.gz'),
     CONSTRAINT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'forweb_cleaned_exac_r03_march16_z_data_pLI_CNV-final.txt.gz'),
