@@ -52,6 +52,7 @@ MONGO_HOST = os.getenv('MONGO_HOST', 'mongo')
 MONGO_PORT = os.getenv('MONGO_PORT', 27017)
 MONGO_URL = 'mongodb://%s:%s' % (MONGO_HOST, MONGO_PORT)
 
+'''
 if DEPLOYMENT_ENVIRONMENT == 'development':
      EXOME_FILES_DIRECTORY = '/Users/msolomon/Projects/exacg/feb2017releasetestdata/170226/exomes/'
      GENOME_FILES_DIRECTORY = '/Users/msolomon/Projects/exacg/feb2017releasetestdata/170226/genomes/'
@@ -69,8 +70,18 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
     GENOME_FILES_DIRECTORY = '/var/data/loading_data/genomes'
     EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, os.getenv('EXOMES_SINGLE_VCF_TEST')))
     GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, os.getenv('GENOMES_VCF_GLOB_TEST')))
+'''
 
-SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
+
+EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+GENOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'sept25_chr22.vep.vcf.gz'))
+GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
+
+
+#SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
+SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
 READ_VIZ_DIRECTORY = '../data/readviz'
 
 REGION_LIMIT = 1E5
@@ -86,23 +97,28 @@ app.config.update(dict(
     # contigs assigned to threads, so good to make this a factor of 24 (eg. 2,3,4,6,8)
     EXOMES_SITES_VCFS=EXOMES_SITES_VCFS,
     GENOMES_SITES_VCFS=GENOMES_SITES_VCFS,
-    # GENOMES_SITES_VCFS=glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'one_gene/*.gz')),
     GENCODE_GTF=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'gencode.gtf.gz'),
     CANONICAL_TRANSCRIPT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'canonical_transcripts.txt.gz'),
     OMIM_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'omim_info.txt.gz'),
-    EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'exacv2.*.cov.txt.gz')),
+
+
+    #EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'exacv2.*.cov.txt.gz')),
+    EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'sept25_chr22.cov.txt.gz')),
+
     GENOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'coverage', 'gnomad.*.cov.txt.gz')),
     DBNSFP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbNSFP2.6_gene.gz'),
     CONSTRAINT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'forweb_cleaned_exac_r03_march16_z_data_pLI_CNV-final.txt.gz'),
     MNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'MNPs_NotFiltered_ForBrowserRelease.txt.gz'),
-    CNV_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-gencode-exon.cnt.final.pop3'),
-    CNV_GENE_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-final-cnvs.gene.rank'),
+    #CNV_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-gencode-exon.cnt.final.pop3'),
+    #CNV_GENE_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'exac-final-cnvs.gene.rank'),
 
     # How to get a dbsnp142.txt.bgz file:
     #   wget ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606_b142_GRCh37p13/database/organism_data/b142_SNPChrPosOnRef_105.bcp.gz
     #   zcat b142_SNPChrPosOnRef_105.bcp.gz | awk '$3 != ""' | perl -pi -e 's/ +/\t/g' | sort -k2,2 -k3,3n | bgzip -c > dbsnp142.txt.bgz
     #   tabix -s 2 -b 3 -e 3 dbsnp142.txt.bgz
-    DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.txt.bgz'),
+    #
+    #DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.txt.bgz'),
+    DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.chr22.txt.bgz'),
 
     #READ_VIZ_DIR=os.path.abspath(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, "readviz")),
     READ_VIZ_DIR=os.path.abspath(READ_VIZ_DIRECTORY),
@@ -558,7 +574,8 @@ def precalculate_metrics(variant_collection, metric_collection, chrom=None):
         if chrom is not None and variant["chrom"] != chrom:
             continue
         for metric, value in variant['quality_metrics'].iteritems():
-            metrics[metric].append(float(value))
+            if not value == ".":
+                metrics[metric].append(float(value))
         qual = float(variant['site_quality'])
         metrics['site_quality'].append(qual)
         if variant['allele_num'] == 0: continue
@@ -1283,5 +1300,6 @@ def submit_variant_report():
     )
 
 if __name__ == "__main__":
-    runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
-    runner.run()
+    app.run(host='myIPADDRESS', port=5000)
+    #runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
+    #runner.run()
