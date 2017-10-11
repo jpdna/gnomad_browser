@@ -72,21 +72,12 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
     GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, os.getenv('GENOMES_VCF_GLOB_TEST')))
 '''
 
-#EXOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/exomes"
-#GENOME_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/genomes"
+
 EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
 GENOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
-#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.head10000.vcf.gz'))
 
-
-#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.minimal.3.vcf.gz'))
 EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'sept25_chr22.vep.vcf.gz'))
-
-
-#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'gnomad.exomes.r2.0.1.sites.22.head10000.vcf.gz'))
-
 GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
-EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data/"
 
 
 #SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
@@ -1309,5 +1300,6 @@ def submit_variant_report():
     )
 
 if __name__ == "__main__":
-    runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
-    runner.run()
+    app.run(host='myIPADDRESS', port=5000)
+    #runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
+    #runner.run()
