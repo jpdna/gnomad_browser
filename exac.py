@@ -73,15 +73,17 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
 '''
 
 
-EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
-GENOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+EXOME_FILES_DIRECTORY = "../exac_data/"
+GENOME_FILES_DIRECTORY = "../exac_data/"
 
-EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'sept25_chr22.vep.vcf.gz'))
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 't2_cs.vcf.gz'))
 GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
 
 
 #SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
-SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
+
+
+SHARED_FILES_DIRECTORY = "../exac_data"
 READ_VIZ_DIRECTORY = '../data/readviz'
 
 REGION_LIMIT = 1E5
@@ -97,7 +99,7 @@ app.config.update(dict(
     # contigs assigned to threads, so good to make this a factor of 24 (eg. 2,3,4,6,8)
     EXOMES_SITES_VCFS=EXOMES_SITES_VCFS,
     GENOMES_SITES_VCFS=GENOMES_SITES_VCFS,
-    GENCODE_GTF=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'gencode.gtf.gz'),
+    GENCODE_GTF=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'gencode.gtf.chr22.gz'),
     CANONICAL_TRANSCRIPT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'canonical_transcripts.txt.gz'),
     OMIM_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'omim_info.txt.gz'),
 
@@ -1300,6 +1302,6 @@ def submit_variant_report():
     )
 
 if __name__ == "__main__":
-    app.run(host='myIPADDRESS', port=5000)
+    app.run(host='localhost', port=5000)
     #runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
     #runner.run()
