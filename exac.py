@@ -73,10 +73,13 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
 '''
 
 
-EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
-GENOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+#EXOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
+#GENOME_FILES_DIRECTORY = "/Volumes/1TBEVO/gnomad_Sept22/v1/data"
 
-EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'sept25_chr22.vep.vcf.gz'))
+EXOME_FILES_DIRECTORY = "../exac_data/"
+GENOME_FILES_DIRECTORY = "../exac_data/"
+
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 't3_cs.vcf.gz'))
 GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
 
 
@@ -1300,6 +1303,6 @@ def submit_variant_report():
     )
 
 if __name__ == "__main__":
-    app.run(host='myIPADDRESS', port=5000)
+    app.run(host='localhost', port=5000)
     #runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
     #runner.run()

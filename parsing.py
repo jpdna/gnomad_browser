@@ -6,7 +6,7 @@ import re
 import traceback
 from tqdm import tqdm
 from utils import *
-
+"""
 POPS = {
     'AFR': 'African',
     'AMR': 'Latino',
@@ -15,7 +15,12 @@ POPS = {
     'FIN': 'European (Finnish)',
     'NFE': 'European (Non-Finnish)',
     'SAS': 'South Asian',
-    'OTH': 'Other'
+    'OTH': 'Other',
+}
+"""
+
+POPS = {
+    'ALL': 'All'
 }
 
 def par(chrom, pos):
@@ -159,19 +164,22 @@ def get_variants_from_sites_vcf(sites_vcf):
                     variant['allele_freq'] = None
 
 
-                """ 
+                 
                 variant['pop_acs'] = dict([(POPS[x], int(info_field['AC_%s' % x].split(',')[i]) if ('AC_%s' % x) in info_field else 0) for x in POPS])
                 variant['pop_ans'] = dict([(POPS[x], int(info_field.get('AN_%s' % x, 0))) for x in POPS])
                 variant['pop_homs'] = dict([(POPS[x], int(info_field['Hom_%s' % x].split(',')[i] if ('Hom_%s' % x) in info_field else 0)) for x in POPS])
+                """
                 if variant['chrom'] not in ('X', 'Y'):
                     if not info_field['AC_Male'].split(',')[i] == ".":
                         variant['ac_male'] = int(info_field['AC_Male'].split(',')[i])
                     if not info_field['AC_Female'].split(',')[i] == ".":
                         variant['ac_female'] = int(info_field['AC_Female'].split(',')[i])
+                
 
                     print("### an_male: " + info_field['AN_Male'])
                     variant['an_male'] = int(info_field['AN_Male'])
                     variant['an_female'] = int(info_field['AN_Female'])
+                """
                 variant['hom_count'] = sum(variant['pop_homs'].values())
                 if variant['chrom'] == 'X':
                     if not par(variant['chrom'], variant['pos']):
@@ -198,7 +206,7 @@ def get_variants_from_sites_vcf(sites_vcf):
                     # hists_all = [info_field['GQ_HIST'].split(',')[0], info_field['GQ_HIST'].split(',')[i+1]]
                     hists_all = [info_field['AB_HIST_ALL'], info_field['AB_HIST_ALT'].split(',')[i]]
                     variant['allele_balance'] = [zip(ab_mids, map(int, x.split('|'))) for x in hists_all]
-                """
+                
                 variant['genes'] = list({annotation['Gene'] for annotation in vep_annotations})
                 variant['transcripts'] = list({annotation['Feature'] for annotation in vep_annotations})
 
