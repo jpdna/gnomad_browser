@@ -207,11 +207,6 @@ def get_variants_from_sites_vcf(sites_vcf):
                     hists_all = [info_field['AB_HIST_ALL'], info_field['AB_HIST_ALT'].split(',')[i]]
                     variant['allele_balance'] = [zip(ab_mids, map(int, x.split('|'))) for x in hists_all]
                 
-                variant['genes'] = list({annotation['Gene'] for annotation in vep_annotations})
-                variant['transcripts'] = list({annotation['Feature'] for annotation in vep_annotations})
-
-
-
 
                 yield variant
         except Exception:
