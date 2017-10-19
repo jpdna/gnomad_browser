@@ -92,6 +92,18 @@
                 exportTableToCSV.apply(this, [$('#variant_table'), 'exac_' + output_name + '_' + timestamp + '.csv']);
             });
         });
+
+
+        $('.variant_selector_group').change(function () {
+        setTimeout(function() {
+            update_variants();
+
+            }, 10);
+        });
+
+
+
+
     </script>
     <div id="variants_loading">Loading variants...</div>
     <div id="variants_table_container" style="display: none;"></div>
