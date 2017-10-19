@@ -79,7 +79,8 @@ if DEPLOYMENT_ENVIRONMENT == 'production_test':
 EXOME_FILES_DIRECTORY = "../exac_data/"
 GENOME_FILES_DIRECTORY = "../exac_data/"
 
-EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'v2_oct10_chrALL.vep.txt.chr22.with_homhet.vcf.gz'))
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'test_1.vcf.gz'))
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'v2_oct10_chrALL.vep.txt.chr22.with_homhet.vcf.gz'))
 #EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 't3_cs.vcf.gz'))
 
 GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
