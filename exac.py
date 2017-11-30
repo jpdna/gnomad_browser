@@ -80,14 +80,21 @@ EXOME_FILES_DIRECTORY = "../exac_data/"
 GENOME_FILES_DIRECTORY = "../exac_data/"
 
 #EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'test_1.vcf.gz'))
-EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'v2_oct10_chrALL.vep.txt.chr22.with_homhet.vcf.gz'))
+
+#out2.with_header.sort.chr22.VEP.vcf.gz
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'v2_oct10_chrALL.vep.txt.chr22.with_homhet.vcf.gz'))
+#EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'out2.with_header.sort.chr22.VEP.vcf.gz'))
+EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'out2.with_header.sort.VEP.vcf.gz'))
+
 #EXOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 't3_cs.vcf.gz'))
 
 GENOMES_SITES_VCFS = glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'gnomad.genomes.r2.0.1.sites.22.vcf.gz'))
 
 
 #SHARED_FILES_DIRECTORY = '../data/loading_data/shared_files'
-SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
+#SHARED_FILES_DIRECTORY = "/Users/paschalj/projects/gnomad/v1/data/shared"
+SHARED_FILES_DIRECTORY = "../exac_data/"
+
 READ_VIZ_DIRECTORY = '../data/readviz'
 
 REGION_LIMIT = 1E5
@@ -109,8 +116,9 @@ app.config.update(dict(
 
 
     #EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'exacv2.*.cov.txt.gz')),
-    EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'sept25_chr22.cov.txt.gz')),
-
+    #EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'sept25_chr22.cov.txt.gz')),
+    EXOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, 'coverage', 'chr22.cov.bgz')),
+ 
     GENOME_BASE_COVERAGE_FILES=glob.glob(os.path.join(os.path.dirname(__file__), GENOME_FILES_DIRECTORY, 'coverage', 'gnomad.*.cov.txt.gz')),
     DBNSFP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbNSFP2.6_gene.gz'),
     CONSTRAINT_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'forweb_cleaned_exac_r03_march16_z_data_pLI_CNV-final.txt.gz'),
@@ -124,7 +132,10 @@ app.config.update(dict(
     #   tabix -s 2 -b 3 -e 3 dbsnp142.txt.bgz
     #
     #DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.txt.bgz'),
-    DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.chr22.txt.bgz'),
+    #DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.chr22.txt.bgz'),
+    #DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp142.txt.bgz'),
+    DBSNP_FILE=os.path.join(os.path.dirname(__file__), SHARED_FILES_DIRECTORY, 'dbsnp/unzip/step2_snp141.txt.bgz'),
+
 
     #READ_VIZ_DIR=os.path.abspath(os.path.join(os.path.dirname(__file__), EXOME_FILES_DIRECTORY, "readviz")),
     READ_VIZ_DIR=os.path.abspath(READ_VIZ_DIRECTORY),
@@ -132,6 +143,7 @@ app.config.update(dict(
 
 print app.config['GENOMES_SITES_VCFS']
 print app.config['EXOMES_SITES_VCFS']
+print "this is coverage file: " + str(app.config['EXOME_BASE_COVERAGE_FILES'])
 
 GENE_CACHE_DIR = os.path.join(os.path.dirname(__file__), 'gene_cache')
 GENES_TO_CACHE = {l.strip('\n') for l in open(os.path.join(os.path.dirname(__file__), 'genes_to_cache.txt'))}
@@ -1306,6 +1318,6 @@ def submit_variant_report():
     )
 
 if __name__ == "__main__":
-    app.run(host='localhost', port=5000)
+    app.run(host='165.112.174.36', port=5000, threaded = True)
     #runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
     #runner.run()
