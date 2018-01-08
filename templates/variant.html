@@ -473,7 +473,8 @@
                             {% if not variant.rsid or variant.rsid == "." %}
                                 <a href="http://www.ncbi.nlm.nih.gov/clinvar?term=({{ variant.chrom }}%5BChromosome%5D)%20AND%20{{ variant.pos }}%5BBase%20Position%20for%20Assembly%20GRCh37%5D" target="_blank">
                             {% else %}
-                                <a href="http://www.ncbi.nlm.nih.gov/clinvar?term={{ variant.rsid }}%5BVariant%20ID%5D" target="_blank">
+                                <!-- <a href="http://www.ncbi.nlm.nih.gov/clinvar?term={{ variant.rsid }}%5BVariant%20ID%5D" target="_blank"> -->
+                               <a href="http://www.ncbi.nlm.nih.gov/clinvar?term={{ variant.rsid }}" target="_blank">
                             {% endif %}
                                 Click to search for variant in Clinvar
                                 <i class="fa fa-external-link"></i>
@@ -581,7 +582,7 @@
                 {% if variant.variant_id %}
                     <div class="section_header">Annotations</div>
                     {% if variant.vep_annotations %}
-                        <p>This variant falls on {{ variant.transcripts|length }} transcripts in {{ variant.genes|length }} genes:</p>
+                      <!--   <p>This variant falls on {{ variant.transcripts|length }} transcripts in {{ variant.genes|length }} genes:</p> -->
                         <div class="panel-group" id="annotation_accordion" style="margin-bottom: 0px;">
                             <div class="row">
                                 {% if consequences|length > 1 %}
