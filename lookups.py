@@ -324,7 +324,7 @@ def get_variants_in_gene_or_transcript(db, gene_id=None, transcript_id=None):
         gene_id, transcript_id: one and only one of these 2 arguments must be specified. This function will
              query for variants in the exons of the given gene or the transcript depending on which one is specified.
     """
-
+    print "####################### Here I am in get_varaints_in_gene_or_transcripts"
     all_variants = []
     exac_variant_uuids = []
     gnomad_variant_uuids = []
@@ -353,6 +353,13 @@ def get_variants_in_gene_or_transcript(db, gene_id=None, transcript_id=None):
         add_consequence_to_variant(variant)
         remove_extraneous_information(variant)
         exac_variant_uuids.append(variant['uuid'])
+        print "######\nHere is varaint in get_variants_in_gene_or_transcipt:\n" + str(variant)
+        mychrom, mypos, myref, myalt = variant['variant_id'].split('-')
+        myxpos = get_xpos(mychrom, mypos)
+        if variant['rsid'] == '.' or variant['rsid'] is None:
+          rsid = db.dbsnp.find_one({'xpos': myxpos})
+          if rsid:
+              variant['rsid'] = 'rs%s' % rsid['rsid']
         all_variants.append(variant)
 
     results = list(db.genome_variants.find(query))

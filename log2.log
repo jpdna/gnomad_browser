@@ -1,0 +1,48 @@
+nohup: ignoring input
+ * Running on http://165.112.174.36:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 620-822-479
+10.172.72.176 - - [03/Nov/2017 07:10:18] "GET / HTTP/1.1" 200 -
+10.172.72.176 - - [03/Nov/2017 07:10:21] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.72.176 - - [03/Nov/2017 07:10:22] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+10.172.72.176 - - [03/Nov/2017 07:10:32] "GET /awesome?query=ADH HTTP/1.1" 302 -
+10.172.72.176 - - [03/Nov/2017 07:10:32] "GET /gene/ENSG00000101200 HTTP/1.1" 200 -
+10.172.72.176 - - [03/Nov/2017 07:10:32] "GET /autocomplete/ADH HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/20/combined_chr20_715.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/20/combined_chr20_715.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/20/combined_chr20_715.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/20/combined_chr20_715.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/20/combined_chr20_715.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/20/combined_chr20_715.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/20/combined_chr20_715.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/20/combined_chr20_715.db - unable to open database file
+10.172.72.176 - - [03/Nov/2017 07:11:01] "GET /variant/20-3063715-T-A HTTP/1.1" 200 -
+ * Detected change in '/data01/paschalj/gnomad_oct23/v1/gnomad_browser/exac.py', reloading
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Retrieving 105 ExAC v2 variants in 70 exons of ENSG00000169174
+Retrieving 0 gnomad variants in 70 exons of ENSG00000169174
+Returning 105 variants
+Rendering gene: ENSG00000169174
+Query: ADH
+Searched for gene: ENSG00000101200
+Retrieving 7 ExAC v2 variants in 8 exons of ENSG00000101200
+Retrieving 0 gnomad variants in 8 exons of ENSG00000101200
+Returning 7 variants
+Rendering gene: ENSG00000101200
+Rendering variant: 20-3063715-T-A
+Rendering variant: 20-3063715-T-A
+Rendering variant: 20-3063715-T-A
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 620-822-479
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']

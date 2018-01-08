@@ -1,0 +1,394 @@
+ * Running on http://165.112.174.36:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 620-822-479
+10.172.48.216 - - [01/Nov/2017 14:17:30] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:17:39] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [01/Nov/2017 14:17:40] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:43:25] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:43:28] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:43:30] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:43:32] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [01/Nov/2017 14:43:32] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_854.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_854.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_854.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_854.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_854.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_854.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_854.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_854.db - unable to open database file
+10.172.48.216 - - [01/Nov/2017 14:43:40] "GET /variant/1-55523854-C-T HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:48:07] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:48:10] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [01/Nov/2017 14:48:10] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_227.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_227.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_227.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_227.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_227.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_227.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_227.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_227.db - unable to open database file
+10.172.48.216 - - [01/Nov/2017 14:48:16] "GET /variant/1-55529227-C-CT HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:49:16] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:49:20] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [01/Nov/2017 14:49:20] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_721.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_721.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_721.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_721.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_721.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_721.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_721.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_721.db - unable to open database file
+10.172.48.216 - - [01/Nov/2017 14:49:26] "GET /variant/1-55505721-C-T HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:49:32] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:49:33] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [01/Nov/2017 14:49:34] "GET / HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET / HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/css/font-awesome.min.css HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/typeaheadjs.css HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/bootstrap.min.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/typeahead.bundle.min.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/theme.default.css HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/bootstrap.min.css HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/style.css HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/jquery.tablesorter.min.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/jquery.tablesorter.pager.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/underscore-min.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/d3.v3.min.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/index.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/exac.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /static/gnomad.js HTTP/1.1" 304 -
+10.172.96.73 - - [01/Nov/2017 16:06:21] "GET /favicon.ico HTTP/1.1" 404 -
+10.172.96.73 - - [01/Nov/2017 16:06:28] "GET /autocomplete/a HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:28] "GET /autocomplete/ada HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:29] "GET /autocomplete/adam HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:29] "GET /autocomplete/adam2 HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:30] "GET /autocomplete/adam2%5C HTTP/1.1" 200 -
+10.172.96.73 - - [01/Nov/2017 16:06:35] "GET /awesome?query=ADAM2 HTTP/1.1" 302 -
+10.172.96.73 - - [01/Nov/2017 16:06:36] "GET /gene/ENSG00000104755 HTTP/1.1" 200 -
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/threading.py", line 551, in __bootstrap_inner
+    self.run()
+  File "/usr/lib64/python2.7/threading.py", line 504, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 702, in inner
+    srv.serve_forever()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 539, in serve_forever
+    HTTPServer.serve_forever(self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 227, in serve_forever
+    self._handle_request_noblock()
+  File "/usr/lib64/python2.7/SocketServer.py", line 286, in _handle_request_noblock
+    self.handle_error(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 638, in __init__
+    self.handle()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 232, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib64/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 267, in handle_one_request
+    return self.run_wsgi()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 181, in write
+    self.wfile.write(data)
+IOError: [Errno 32] Broken pipe
+
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Retrieving 105 ExAC v2 variants in 70 exons of ENSG00000169174
+Retrieving 0 gnomad variants in 70 exons of ENSG00000169174
+Returning 105 variants
+Rendering gene: ENSG00000169174
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Rendering gene: ENSG00000169174
+Rendering variant: 1-55523854-C-T
+Rendering variant: 1-55523854-C-T
+Rendering variant: 1-55523854-C-T
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Rendering gene: ENSG00000169174
+Rendering variant: 1-55529227-C-CT
+Rendering variant: 1-55529227-C-CT
+Rendering variant: 1-55529227-C-CT
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Rendering gene: ENSG00000169174
+Rendering variant: 1-55505721-C-T
+Rendering variant: 1-55505721-C-T
+Rendering variant: 1-55505721-C-T
+Query: ADAM2
+Searched for gene: ENSG00000104755
+Retrieving 106 ExAC v2 variants in 175 exons of ENSG00000104755
+Retrieving 0 gnomad variants in 175 exons of ENSG00000104755
+Returning 106 variants
+Rendering gene: ENSG00000104755
+ * Running on http://165.112.174.36:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 620-822-479
+10.172.48.216 - - [02/Nov/2017 11:29:08] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 11:29:12] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [02/Nov/2017 11:29:12] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 11:31:35] "GET /transcript/ENST00000302118 HTTP/1.1" 200 -
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/threading.py", line 551, in __bootstrap_inner
+    self.run()
+  File "/usr/lib64/python2.7/threading.py", line 504, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 702, in inner
+    srv.serve_forever()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 539, in serve_forever
+    HTTPServer.serve_forever(self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 227, in serve_forever
+    self._handle_request_noblock()
+  File "/usr/lib64/python2.7/SocketServer.py", line 286, in _handle_request_noblock
+    self.handle_error(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 284, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 310, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 323, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 638, in __init__
+    self.handle()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 232, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib64/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/data01/paschalj/gnomad_oct23/v1/venv/lib/python2.7/site-packages/werkzeug/serving.py", line 263, in handle_one_request
+    self.raw_requestline = self.rfile.readline()
+IOError: [Errno 104] Connection reset by peer
+
+  File "exac.py", line 149
+    GENES_TO_CACHE = {l.strip('\n') for l in open(os.path.join(os.path.dirname(__file__), 'genes_to_cache.txt'))}
+                                      ^
+SyntaxError: invalid syntax
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Retrieving 105 ExAC v2 variants in 70 exons of ENSG00000169174
+Retrieving 0 gnomad variants in 70 exons of ENSG00000169174
+Returning 105 variants
+Rendering gene: ENSG00000169174
+Retrieving 100 ExAC v2 variants in 26 exons of ENST00000302118
+Retrieving 0 gnomad variants in 26 exons of ENST00000302118
+Returning 100 variants
+Sending template for transcript: ENST00000302118
+ * Running on http://165.112.174.36:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 620-822-479
+10.172.48.216 - - [02/Nov/2017 14:35:22] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [02/Nov/2017 14:35:23] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:36:00] "GET /transcript/ENST00000452118 HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:36:18] "GET /awesome?query=ANK HTTP/1.1" 302 -
+10.172.48.216 - - [02/Nov/2017 14:36:20] "GET /gene/ENSG00000154122 HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:36:20] "GET /autocomplete/ANK HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:36:23] "GET / HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+10.172.48.216 - - [02/Nov/2017 14:36:26] "GET /variant/1-55505647-G-T HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:36:31] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [02/Nov/2017 14:36:31] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+10.172.48.216 - - [02/Nov/2017 14:36:57] "GET /variant/1-55505647-G-T HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:37:04] "GET /autocomplete/A HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:37:04] "GET /autocomplete/AD HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:37:06] "GET /awesome?query=AD-003 HTTP/1.1" 302 -
+10.172.48.216 - - [02/Nov/2017 14:37:07] "GET /gene/ENSG00000148335 HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:37:07] "GET /autocomplete/ADH HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:41:42] "GET / HTTP/1.1" 200 -
+10.172.48.216 - - [02/Nov/2017 14:41:45] "GET /awesome?query=PCSK9 HTTP/1.1" 302 -
+10.172.48.216 - - [02/Nov/2017 14:41:45] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+10.172.48.216 - - [02/Nov/2017 14:41:47] "GET /variant/1-55505647-G-T HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:02:36] "GET /transcript/ENST00000302118 HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:06:01] "GET / HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:07:22] "GET /autocomplete/adam HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:07:24] "GET /autocomplete/adam2 HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:07:28] "GET /awesome?query=ADAM2 HTTP/1.1" 302 -
+10.172.96.73 - - [02/Nov/2017 17:07:29] "GET /gene/ENSG00000104755 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+10.172.96.73 - - [02/Nov/2017 17:16:00] "GET /variant/8-39604015-C-T HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+10.172.96.73 - - [02/Nov/2017 17:19:13] "GET /variant/8-39604015-C-T HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_210.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_210.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_210.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_210.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_210.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_210.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_210.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_210.db - unable to open database file
+10.172.96.73 - - [02/Nov/2017 17:26:31] "GET /variant/8-39601210-T-C HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_015.db - unable to open database file
+10.172.96.73 - - [02/Nov/2017 17:27:31] "GET /variant/8-39604015-C-T HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:28:13] "GET / HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/1/combined_chr1_647.db - unable to open database file
+10.172.96.73 - - [02/Nov/2017 17:28:15] "GET /variant/1-55505647-G-T HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:29:23] "GET /gene/ENSG00000169174 HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:29:53] "GET /autocomplete/adam HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:29:54] "GET /autocomplete/adam2 HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:29:54] "GET /awesome?query=ADAM2 HTTP/1.1" 302 -
+10.172.96.73 - - [02/Nov/2017 17:29:54] "GET /gene/ENSG00000104755 HTTP/1.1" 200 -
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_677.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_677.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_677.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_677.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_677.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_genomes/combined_bams/8/combined_chr8_677.db - unable to open database file
+/data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_677.db
+Error when accessing sqlite db: /data01/paschalj/gnomad_oct23/v1/data/readviz/combined_bams_exomes/combined_bams/8/combined_chr8_677.db - unable to open database file
+10.172.96.73 - - [02/Nov/2017 17:36:02] "GET /variant/8-39695677-C-A HTTP/1.1" 200 -
+10.172.96.73 - - [02/Nov/2017 17:36:26] "GET /transcript/ENST00000523181 HTTP/1.1" 200 -
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']
+[]
+['../exac_data/out2.with_header.sort.VEP.vcf.gz']
+this is coverage file: ['../exac_data/coverage/chr22.cov.bgz']
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Retrieving 105 ExAC v2 variants in 70 exons of ENSG00000169174
+Retrieving 0 gnomad variants in 70 exons of ENSG00000169174
+Returning 105 variants
+Rendering gene: ENSG00000169174
+Retrieving 34 ExAC v2 variants in 14 exons of ENST00000452118
+Retrieving 0 gnomad variants in 14 exons of ENST00000452118
+Returning 34 variants
+Sending template for transcript: ENST00000452118
+Query: ANK
+Searched for gene: ENSG00000154122
+Retrieving 137 ExAC v2 variants in 69 exons of ENSG00000154122
+Retrieving 0 gnomad variants in 69 exons of ENSG00000154122
+Returning 137 variants
+Rendering gene: ENSG00000154122
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Rendering gene: ENSG00000169174
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Query: AD-003
+Searched for gene: ENSG00000148335
+Retrieving 36 ExAC v2 variants in 69 exons of ENSG00000148335
+Retrieving 0 gnomad variants in 69 exons of ENSG00000148335
+Returning 36 variants
+Rendering gene: ENSG00000148335
+Query: PCSK9
+Searched for gene: ENSG00000169174
+Rendering gene: ENSG00000169174
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Retrieving 100 ExAC v2 variants in 26 exons of ENST00000302118
+Retrieving 0 gnomad variants in 26 exons of ENST00000302118
+Returning 100 variants
+Sending template for transcript: ENST00000302118
+Query: ADAM2
+Searched for gene: ENSG00000104755
+Retrieving 106 ExAC v2 variants in 175 exons of ENSG00000104755
+Retrieving 0 gnomad variants in 175 exons of ENSG00000104755
+Returning 106 variants
+Rendering gene: ENSG00000104755
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39601210-T-C
+Rendering variant: 8-39601210-T-C
+Rendering variant: 8-39601210-T-C
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 8-39604015-C-T
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Rendering variant: 1-55505647-G-T
+Rendering gene: ENSG00000169174
+Query: ADAM2
+Searched for gene: ENSG00000104755
+Rendering gene: ENSG00000104755
+Rendering variant: 8-39695677-C-A
+Rendering variant: 8-39695677-C-A
+Rendering variant: 8-39695677-C-A
+Retrieving 25 ExAC v2 variants in 7 exons of ENST00000523181
+Retrieving 0 gnomad variants in 7 exons of ENST00000523181
+Returning 25 variants
+Sending template for transcript: ENST00000523181

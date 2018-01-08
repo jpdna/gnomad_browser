@@ -1318,6 +1318,6 @@ def submit_variant_report():
     )
 
 if __name__ == "__main__":
-    app.run(host='165.112.174.36', port=5000, threaded = True)
+    app.run(host='localhost', port=5000, threaded = True)
     #runner = Runner(app)  # adds Flask command line options for setting host, port, etc.
     #runner.run()
