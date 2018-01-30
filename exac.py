@@ -1201,6 +1201,26 @@ def contact_page():
 def faq_page():
     return render_template('faq.html')
 
+@app.route('/application')
+def application_page():
+    return render_template('application.html')
+
+@app.route('/submit', methods=['POST'])
+def submit_page():
+    ri = request.form['piname']
+    #return 'This is the submit page, PI:' + ri
+
+    print "objectives" + request.form['objectives']
+
+    return render_template(
+        'submitted.html',
+        ri_name=request.form['piname']
+    )
+
+    #return 'render_template('submit.html')
+
+
+
 @app.route('/<path:path>')
 def loader_verification(path):
     return send_from_directory('static', path)
