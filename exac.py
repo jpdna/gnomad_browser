@@ -9,6 +9,7 @@ import logging
 import lookups
 import random
 import sys
+import smtplib
 from tqdm import tqdm
 from utils import *
 
@@ -31,6 +32,10 @@ import glob
 import sqlite3
 import traceback
 import time
+
+s = smtplib.SMTP('localhost')
+from email.mime.text import MIMEText
+
 
 logging.getLogger().addHandler(logging.StreamHandler())
 logging.getLogger().setLevel(logging.INFO)
@@ -1194,7 +1199,8 @@ def terms_page():
 
 @app.route('/contact')
 def contact_page():
-    return render_template('contact.html')
+    return "test contact 3"
+    #return render_template('contact.html')
 
 
 @app.route('/faq')
@@ -1205,20 +1211,63 @@ def faq_page():
 def application_page():
     return render_template('application.html')
 
+"""
+@app.route('/test1')
+def test1_page():
+  return "test1"
+"""
+
+
 @app.route('/submit', methods=['POST'])
 def submit_page():
-    ri = request.form['piname']
-    #return 'This is the submit page, PI:' + ri
+    msg=MIMEText("dude_feb1")
 
-    print "objectives" + request.form['objectives']
+    requesterFirstName = request.form['requesterFirstName']
+    requesterLastName =  request.form['requesterLastName']
+    requesterPhone =     request.form['requesterPhone']
+    requesterEmail =     request.form['requesterEmail'] 
+    riFirstName =        request.form['riFirstName']
+    riLastName =         request.form['riLastName']
+    riPhone =            request.form['riPhone']
+    riEmail =            request.form['riEmail']
 
-    return render_template(
-        'submitted.html',
-        ri_name=request.form['piname']
-    )
+    institute = request.form['institute']
+    projectTitle = request.form['projectTitle']
+    background = request.form['background']
+    objectives = request.form['objectives']
+    design = request.form['design']
+    protocol = request.form['protocol']
+    pheno = request.form['pheno']
+    ror = request.form['ror']
+    references = request.form['references']
+    isreviewed = request.form['isreviewed']
+   
 
-    #return 'render_template('submit.html')
+    """
+    msgText = ("Proposal from submitted to TGAC\n\n" +
+              "Requester First Name:\n" + requesterFirstName + "\n\n" +
+              "Requester Last Name:\n" + requesterLastName  + "\n\n" +
+              "Requester Phone:\n" + requesterPhone + "\n\n" +
+              "Requester Email:\n" + requesterEmail + "\n\n" +
+              "Research Investigator First Name:\n" + riFirstName + "\n\n" +
+              "Research Investigator Last Name:\n" + riLastName  + "\n\n" +
+              "Research Investigator Phone:\n" + riPhone + "\n\n" +
+              "Research Investigator Email:\n" + riEmail + "\n\n" +
+              "Institute:\n" + institute + "\n\n" +
+              "Project Title:\n" + projectTitle)
+    """
 
+
+    #msg = MIMEText(msgText)
+
+    me = "tgac@nih.gov"
+    you = "justinpaschalldna@gmail.com"
+    msg['From'] = me
+    msg['You'] = you
+    s = smtplib.SMTP('localhost')
+    s.sendmail(me, [you], msg.as_string())
+
+    return render_template('submitted.html')
 
 
 @app.route('/<path:path>')
