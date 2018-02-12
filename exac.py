@@ -1217,10 +1217,11 @@ def test1_page():
   return "test1"
 """
 
-
 @app.route('/submit', methods=['POST'])
 def submit_page():
-    msg=MIMEText("dude_feb1")
+    #msg=MIMEText("dude_feb1")
+
+     
 
     requesterFirstName = request.form['requesterFirstName']
     requesterLastName =  request.form['requesterLastName']
@@ -1238,36 +1239,45 @@ def submit_page():
     design = request.form['design']
     protocol = request.form['protocol']
     pheno = request.form['pheno']
+    
     ror = request.form['ror']
     references = request.form['references']
     isreviewed = request.form['isreviewed']
    
+    
 
-    """
+    
     msgText = ("Proposal from submitted to TGAC\n\n" +
               "Requester First Name:\n" + requesterFirstName + "\n\n" +
               "Requester Last Name:\n" + requesterLastName  + "\n\n" +
               "Requester Phone:\n" + requesterPhone + "\n\n" +
-              "Requester Email:\n" + requesterEmail + "\n\n" +
+              "Requester Email:\n" + requesterEmail + "\n\n"  +
               "Research Investigator First Name:\n" + riFirstName + "\n\n" +
               "Research Investigator Last Name:\n" + riLastName  + "\n\n" +
               "Research Investigator Phone:\n" + riPhone + "\n\n" +
               "Research Investigator Email:\n" + riEmail + "\n\n" +
-              "Institute:\n" + institute + "\n\n" +
-              "Project Title:\n" + projectTitle)
-    """
+              "Institute:\n" + institute + "\n\n"  +
+              "Project Title:\n" + projectTitle + "\n\n")
 
 
-    #msg = MIMEText(msgText)
+    
 
-    me = "tgac@nih.gov"
+    
+
+    msg = MIMEText(msgText)
+
+    me = "tgac_test@nih.gov"
     you = "justinpaschalldna@gmail.com"
     msg['From'] = me
     msg['You'] = you
     s = smtplib.SMTP('localhost')
+
     s.sendmail(me, [you], msg.as_string())
 
+
     return render_template('submitted.html')
+
+
 
 
 @app.route('/<path:path>')
