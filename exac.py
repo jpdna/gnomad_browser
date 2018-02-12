@@ -33,6 +33,8 @@ import sqlite3
 import traceback
 import time
 
+import datetime
+
 s = smtplib.SMTP('localhost')
 from email.mime.text import MIMEText
 
@@ -1236,6 +1238,7 @@ def submit_page():
     projectTitle = request.form['projectTitle']
     background = request.form['background']
     objectives = request.form['objectives']
+    variants = request.form['variants']
     design = request.form['design']
     protocol = request.form['protocol']
     pheno = request.form['pheno']
@@ -1247,7 +1250,7 @@ def submit_page():
     
 
     
-    msgText = ("Proposal from submitted to TGAC\n\n" +
+    msgText = ("Proposal form submitted to TGAC on " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M") + "\n\n" +
               "Requester First Name:\n" + requesterFirstName + "\n\n" +
               "Requester Last Name:\n" + requesterLastName  + "\n\n" +
               "Requester Phone:\n" + requesterPhone + "\n\n" +
@@ -1257,24 +1260,44 @@ def submit_page():
               "Research Investigator Phone:\n" + riPhone + "\n\n" +
               "Research Investigator Email:\n" + riEmail + "\n\n" +
               "Institute:\n" + institute + "\n\n"  +
-              "Project Title:\n" + projectTitle + "\n\n")
-
-
-    
-
+              "Project Title:\n" + projectTitle + "\n\n"
+              "Background:\n" + background + "\n\n" +
+              "Objectives:\n" + objectives + "\n\n" +
+              "Variant:\n" + variants + "\n\n" + 
+              "Design:\n" + design + "\n\n" +
+              "Protocol:\n" + protocol + "\n\n" + 
+              "Phenotype:\n" + pheno + "\n\n" +
+              "Return Of Results:\n" + ror + "\n\n" +
+              "References:\n" + references + "\n\n" +
+              "IsReviewed:\n" + isreviewed + "\n\n")
     
 
     msg = MIMEText(msgText)
 
-    me = "tgac_test@nih.gov"
-    you = "justinpaschalldna@gmail.com"
+    tgac_email = "tgac_test@nih.gov"
+
+    me = tgac_email
+    recipients = [tgac_email, requesterEmail]
+    if riEmail != "":
+      recipients.append(riEmail)
+
+    #rec = ', '.join(you)
+
     msg['From'] = me
-    msg['You'] = you
+    msg['To'] = ", ".join(recipients)
+    msg['Suject'] = "Application for TGAC"
     s = smtplib.SMTP('localhost')
 
-    s.sendmail(me, [you], msg.as_string())
+    #print "this is you: " + str(you) + "\n"
+    #print "This is rec: " + rec + "\n"
 
 
+    s.sendmail(me, recipients, msg.as_string())
+
+    db = get_db()
+    doc = [{"form": msgText}]
+    db["test4apps"].insert(doc)
+    
     return render_template('submitted.html')
 
 
