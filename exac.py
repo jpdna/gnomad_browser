@@ -1274,7 +1274,7 @@ def submit_page():
 
     msg = MIMEText(msgText)
 
-    tgac_email = "tgac_test@nih.gov"
+    tgac_email = "tgac@mail.nih.gov"
 
     me = tgac_email
     recipients = [tgac_email, requesterEmail]
@@ -1285,7 +1285,7 @@ def submit_page():
 
     msg['From'] = me
     msg['To'] = ", ".join(recipients)
-    msg['Suject'] = "Application for TGAC"
+    msg['Subject'] = "Application for TGAC"
     s = smtplib.SMTP('localhost')
 
     #print "this is you: " + str(you) + "\n"
