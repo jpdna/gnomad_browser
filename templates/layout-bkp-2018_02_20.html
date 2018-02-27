@@ -1,5 +1,5 @@
 <!doctype html><head>
-    <title>TGAC Browser</title>
+    <title>TGAC browser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='typeaheadjs.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='theme.default.css') }}"> <!--tablesorter's css-->
     <script type="text/javascript" src="{{ url_for('static', filename='underscore-min.js') }}"></script>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min-new.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='genome-front_end.css') }}">
@@ -24,18 +24,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
     <script type="text/javascript" src="{{  url_for('static', filename='exac.js') }}"></script>
     <script type="text/javascript" src="{{  url_for('static', filename='gnomad.js') }}"></script>
- 
-<!-- NHGRI/DIR Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-27611436-16"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-27611436-16');
-</script>
-              
-<!-- <script>
+    <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -43,7 +32,7 @@
 
       ga('create', 'UA-85987017-1', 'auto');
       ga('send', 'pageview');
-</script> -->
+    </script> -->
 
     <script type="text/javascript">
         number_of_samples = 60706;
@@ -87,57 +76,65 @@
 
 
 <div id="header" class="" style="background-image:url(/static/images/bg-header_gradient.jpg)">
-	<div class="container">
-				
-		<h1 id="logo" class="logo">
+	<div class="container" style="margin-bottom:-5px;">
+		<!-- <h1 class="sr-only hidden">Homepage</h1> -->
+		
+		<h1 id="logo" class="logo navbar-left">
 			<a rel="home" href="http://research.nhgri.nih.gov/">
 				<img src="/static/images/logo-nhgri.png" alt="NIH National Human Genome Research Institute">
 			</a>
 		</h1>
 		
-		<div class="visible-lg" style="display:block; float:right;"><img src="/static/images/logo-nhgri_x.png" alt="NHGRI Logo" border="0" style="margin-left:30px;"/></div>
+		<!--<a href="http://research.nhgri.nih.gov/" style="display:inline-block; width:360px; height:100px; padding-top:18px"><img src="/static/images/logo-nhgri.png" alt="NIH National Human Genome Research Institute" border="0" style="padding:2px 5px 0 0; float:left; max-width:300px"/></a>-->
 		
-		<div class="hidden-xs nav-search" id="navbar_form_container">
+		<div class="visible-lg" style="display:block; float:right;"><img src="/static/images/logo-nhgri_x.png" alt="NHGRI Logo" border="0" style="margin-left:30px"/></div>
+
+<div class="hidden-xs" style="padding-top:13px; text-align:right; float:right;">
+<form action="/awesome" id="search_form" class="navbar-form" role="search">
+
+<input autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input" id="query" name="query" type="text" size="45" maxlength="100" required="yes" placeholder="Search for a gene, transcript, variant, or region" message="You must enter a keyword to search." style="height:36px" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+
+<input type="image" style="margin:-3px 0 0 -35px" src="/static/images/icon-magnifying.png" alt="Search" title="Search" name="commit" id="search_button" value="submit" align="absmiddle">
+</form>
+
+</div>
+		
+		<!-- OLD TGAC <div class="col-xs-5" id="navbar_form_container">
+                <form action="/awesome" class="navbar-form" role="search">
+                    <div class="form-group" id="navbar-awesomebar">
+                        <input type="submit" style="display: none;"/>
+                        <input id="navbar-searchbox-input2" name="query" class="form-control awesomebar" type="text" placeholder="Search for a gene, transcript, variant, or region"/>
+                        <input type="submit" style="position: absolute; left: -9999px"/>
+                    </div>
+                </form>
+		</div> -->
+					
+						
+		<!-- GENOME <div class="hidden-xs" style="padding-top:13px; text-align:right; float:right;">
 			<form action="/awesome" class="navbar-form" role="search">
-				<div class="form-group" id="navbar-awesomebar">
-					<input type="submit" style="display: none;"/>
-					<input type="text" id="navbar-searchbox-input" name="query" class="form-control awesomebar" size="42" maxlength="100" placeholder="Search for a gene, transcript, variant, or region"/>
-					<input type="submit" style="position: absolute; left: -9999px"/>
-				</div>
+				<!--<input type="submit" style="display: none;"/>
+				<input id="navbar-searchbox-input" name="query" size="40" maxlength="100" class="form-control awesomebar" type="text" placeholder="Search for a gene, transcript, variant, or region"/>
+				<!--<input type="submit" style="position: absolute; left: -9999px"/>
+				<input type="image" style="margin:-3px 0 0 -35px" src="/static/images/icon-magnifying.png" alt="Search" title="Search" name="commit" id="search_button" value="submit" align="absmiddle"/>
 			</form>
-		</div>
+		</div> -->
+		
 		
 	</div>
 </div>
 
+
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
-						
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			
-			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#search-collapse" aria-controls="search-collapse" aria-expanded="false" aria-label="Toggle search" style="margin:0; padding:11px 12px 9px; border:0; background:none;">
-				<img src="/static/images/icon-magnifying.png" style="width:28px" alt="Search">
-			</button>
-			
 			<a class="navbar-brand" href="/">The Genome Ascertainment Cohort (TGAC) Browser</a>
 		</div>
-		
-		<div id="search-collapse" class="collapse navbar-collapse">
-			<form action="/awesome" class="navbar-form visible-xs" role="search">
-				<div id="navbar-awesomebar-mobile" class="form-group">
-					<input type="submit" style="display: none;"/>
-					<input type="text" id="navbar-searchbox-input-mobile" name="query" class="form-control awesomebar" size="42" maxlength="100" placeholder="Search for a gene, transcript, variant, or region"/>
-					<input type="submit" style="position: absolute; left: -9999px"/>
-				</div>
-			</form>
-		</div>
-
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -149,8 +146,8 @@
 				<li><a href="/application">Application</a></li>
 				<li><a href="/faq">FAQ</a></li>
 			</ul>
-		</div> <!-- Close: .navbar-collapse -->
-	</div> <!-- Close: .container -->
+		</div> <!-- /.navbar-collapse -->
+	</div> <!-- /.container -->
 </nav>
 
 
@@ -158,16 +155,17 @@
 
 
 <div id="footer">
-	<div class="container">
-   	<ul class="links">
-			<li><a href="http://www.genome.gov/privacy.cfm" target="_blank">Privacy <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.genome.gov/copyright.cfm" target="_blank">Copyright <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.genome.gov/10005049" target="_blank">Contact <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.genome.gov/accessibility.cfm" target="_blank">Accessibility <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.hhs.gov/plugins.html" target="_blank">Plug-ins <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.genome.gov/sitemap.cfm" target="_blank">Site Map <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.genome.gov/staffSearch.cfm" target="_blank">Staff Directory <i class="fa fa-external-link" aria-hidden="true"></i></a></li><li><a href="http://www.nhlbi.nih.gov/about/foia.htm" target="_blank">FOIA <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-		</ul>
-		<ul class="logos">
-			<li><a title="Department of Health and Human Services" href="http://www.hhs.gov/" target="_blank"><img src="/static/images/logo-hhs.png" alt="Department of Health and Human Services"></a></li>
-			<li><a title="National Institutes of Health" href="http://www.nih.gov/" target="_blank"><img src="/static/images/logo-nih.png" alt="National Institutes of Health"></a></li>
-			<li><a title="USA.gov" href="http://www.usa.gov/" target="_blank"><img src="/static/images/logo-usa.png" alt="Government Made Easy"></a></li>
-		</ul>
-	</div> <!-- Close: .container -->
+  
+  <ul class="links">
+    <li><a href="http://www.genome.gov/privacy.cfm" target="_blank">Privacy</a></li><li><a href="http://www.genome.gov/copyright.cfm" target="_blank">Copyright</a></li><li><a href="http://www.genome.gov/10005049" target="_blank">Contact</a></li><li><a href="http://www.genome.gov/accessibility.cfm" target="_blank">Accessibility</a></li><li><a href="http://www.hhs.gov/plugins.html" target="_blank">Plug-ins</a></li><li><a href="http://www.genome.gov/sitemap.cfm" target="_blank">Site Map</a></li><li><a href="http://www.genome.gov/staffDirectory.cfm" target="_blank">Staff Directory</a></li><li><a href="http://www.nhlbi.nih.gov/about/foia.htm" target="_blank">FOIA</a></li>
+  </ul>
+  
+  <ul class="logos">
+    <li><a title="Department of Health and Human Services" href="http://www.hhs.gov/" target="_blank"><img src="/static/images/logo-hhs.png" alt="Department of Health and Human Services"></a></li>
+    <li><a title="National Institutes of Health" href="http://www.nih.gov/" target="_blank"><img src="/static/images/logo-nih.png" alt="National Institutes of Health"></a></li>
+    <li><a title="USA.gov" href="http://www.usa.gov/" target="_blank"><img src="/static/images/logo-usa.png" alt="Government Made Easy"></a></li>
+  </ul>
+  
 </div>
 
 </body>

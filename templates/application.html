@@ -1,518 +1,107 @@
 {% extends "layout.html" %}
 {% block body %}
-  <div class="container" style="font-size: 16px;">
-  <h1>Research Proposal Application</h1>
-
-  <h3>We ask that all investigators seeking to use TGAC complete the project form found below.  Please provide as much detail as necessary to convey the relevant information for your proposed project.</h3>
-  <p> </p>
-      <form class="form-horizontal" action="/submit" method="post">
 
 <div class="container">
+	<h1>Research Proposal Application</h1>
 
-     <div class="form-group">
-         <font color="red"><strong>Requester</strong></font><br />
-      <label for="requesterFirstName">First Name:</label>
-      <input type="text" class="form-control" id="requesterFirstName" placeholder="Enter Requester First Name" name="requesterFirstName">
-    </div>
-    <div class="form-group">
-      <label for="requesterLastName">Last Name:</label>
-      <input type="text" class="form-control" id="requesterLastName" placeholder="Enter Requester Last Name" name="requesterLastName">
-    </div>
-    
-    <div class="form-group">
-      <label for="requesterPhone">Phone:</label>
-      <input type="text" class="form-control" id="requesterPhone" placeholder="Enter Requester Phone Number" name="requesterPhone">
-    </div>
+  <p>We ask that all investigators seeking to use TGAC complete the project form found below.  Please provide as much detail as necessary to convey the relevant information for your proposed project.</p>
 
-    <div class="form-group">
-      <label for="requesterEmail">Email:</label>
-      <input type="text" class="form-control" id="requesterEmail" placeholder="Enter Requester Email" name="requesterEmail">
-    </div>
+	<form action="/submit" method="post">
+		<h4 style="color:#5f9baf;">Requester</h4>
+  	<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="requesterFirstName">First Name:</label>
+	      <input type="text" class="form-control" id="requesterFirstName" placeholder="Enter Requester First Name" name="requesterFirstName">
+  	  </div>
+	    <div class="form-group col-md-6">
+	      <label for="requesterLastName">Last Name:</label>
+  	    <input type="text" class="form-control" id="requesterLastName" placeholder="Enter Requester Last Name" name="requesterLastName">
+	    </div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="requesterEmail">E-mail Address:</label>
+				<input type="text" class="form-control" id="requesterEmail" placeholder="Enter Requester E-mail Address" name="requesterEmail">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="requesterPhone">Phone Number:</label>
+				<input type="text" class="form-control" id="requesterPhone" placeholder="Enter Requester Phone Number" name="requesterPhone">
+			</div>
+		</div>
 
+		<h4 style="color:#5f9baf;">Research Investigator (<em>if different than Requester</em>)</h4>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="riFirstName">First Name:</label>
+				<input type="text" class="form-control" id="riFirstName" placeholder="Enter Research Investigator First Name" name="riFirstName">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="riLastName">Last Name:</label>
+				<input type="text" class="form-control" id="riLastName" placeholder="Enter Research Investigator Last Name" name="riLastName">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="riEmail">E-mail Address:</label>
+				<input type="text" class="form-control" id="riEmail" placeholder="Enter Research Investigator E-mail Address" name="riEmail">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="riPhone">Phone Number:</label>
+				<input type="text" class="form-control" id="riPhone" placeholder="Enter Research Investigator Phone Number" name="riPhone">
+			</div>
+		</div>
 
-     <div class="form-group">
-         <font color="red"><strong>Research Investigator (if different than Requester)</strong></font><br />
-      <label for="riFirstName">First Name:</label>
-      <input type="text" class="form-control" id="riFirstName" placeholder="Enter Research Investigator First Name" name="riFirstName">
-    </div>
-    <div class="form-group">
-      <label for="riLastName">Last Name:</label>
-      <input type="text" class="form-control" id="riLastName" placeholder="Enter Research Investigator Last Name" name="riLastName">
-    </div>
-    
-    <div class="form-group">
-      <label for="riPhone">Phone:</label>
-      <input type="text" class="form-control" id="riPhone" placeholder="Enter Research Investigator Phone Number" name="riPhone">
-    </div>
+		<h4 style="color:#5f9baf;">Institute or Center (IC)</h4>
+		<div class="form-group col-lg-12">
+			<label for="institute" class="sr-only">Institute or Center</label>
+			<input type="text" class="form-control" id="institute" placeholder="Examples: NIH/NHGRI or Inova Translational Medicine Institute" name="institute">
+		</div>
 
-    <div class="form-group">
-      <label for="riEmail">Email:</label>
-      <input type="text" class="form-control" id="riEmail" placeholder="Enter Research Investigator Email" name="riEmail">
-    </div>
+		<h4 style="color:#5f9baf;">Project Information</h4>
+		<div class="form-group col-lg-12">
+			<label for="projectTitle">Project Title:</label>
+			<textarea class="form-control" rows="5" id="projectTitle" name="projectTitle"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="background">Background:</label>
+			<textarea class="form-control" rows="5" id="background" name="background"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="objectives">Objectives:</label>
+			<textarea class="form-control" rows="5" id="objectives" name="objectives"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="variants">Variant or Variants of Interest:</label>
+			<textarea class="form-control" rows="5" id="variants" name="variants"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="design">Study Design (<em>include sample size and power calculation if applicable</em>):</label>
+			<textarea class="form-control" rows="5" id="design" name="design"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="protocol">Will Data be gathered under your existing protocol?  If so, please specify protocol number:</label>
+			<textarea class="form-control" rows="5" id="protocol" name="protocol"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="pheno">Are you requesting clinical phenotyping services from the TGAC study team?  If so, please describe:</label>
+			<textarea class="form-control" rows="5" id="pheno" name="pheno"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="ror">Will you return genetic results to participants?  Please describe:</label>
+			<textarea class="form-control" rows="5" id="ror" name="ror"></textarea>
+		</div>
+		<div class="form-group col-lg-12">
+			<label for="references">Relevant References (<em>if any</em>):</label>
+			<textarea class="form-control" rows="5" id="references" name="references"></textarea>
+		</div>
 
-          <div class="form-group">
-        <font color="red"><strong>Institute</strong></font><br />
-      <!--<label for="institute">Institute or Organization:</i></label> -->
-      <input type="text" class="form-control" id="institute" placeholder="examples: NIH/NHGRI or Inova Translational Medicine Institute)" name="institute">
-    </div>
+		<div class="form-group col-lg-12 checkbox">
+			<input type="checkbox" name="isreviewed" required>
+			<label class="form-check-label" for="inlineCheckbox1">I affirm that this project has been reviewed and approved by Research Investigator listed above.  Both Research Investigator and Requester will receive an E-mail copy of the submitted form.</label>
+		</div>
 
-    <!--
-     <div class="form-group">
-      <label for="piname">Research Investigator Name:</label>
-      <input type="text" class="form-control" id="piname" placeholder="Enter PI name" name="piname" required>
-    </div>
-       <div class="form-group">
-      <label for="piemail">Research Investigator email:</label>
-      <input type="piemail" class="form-control" id="piemail" placeholder="Enter Research Investigator email" name="piemail" required>
-    </div>
-          <div class="form-group">
-      <label for="institute">Institute or Deparment:</i></label>
-      <input type="text" class="form-control" id="institute" placeholder="Institute or Department (e.g. NHGRI)" name="institute">
-    </div> -->
-
-
-
-<!--
-         <div class="form-group">
-      <label for="contactname">Contact Name <i>(if different than Research Investigator):</i></label>
-      <input type="text" class="form-control" id="contactname" placeholder="Enter Contact name" name="comtactname">
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="phone">Phone:</label>
-      <input type="text" class="form-control" id="phone" placeholder="xxx-xxx-xxxx" name="phone" required>
-    </div>
-
-    -->
-
-    <div class="form-group">
-        <font color="red"><strong>Project Information</strong></font><br />
-      <label for="projectTitle">Project Title:</label>
-      <textarea class="form-control" rows="5" id="projectTitle" name="projectTitle"></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="background">Background:</label>
-      <textarea class="form-control" rows="5" id="background" name="background"></textarea>
-    </div>
-
-    <div class="form-group">
-    <label for="objectives">Objectives:</label>
-     <textarea class="form-control" rows="5" id="objectives" name="objectives"></textarea>
-    </div>
-
-    <div class="form-group">
-    <label for="variants">Variant or Variants of interest:</label>
-     <textarea class="form-control" rows="5" id="variants" name="variants"></textarea>
-     </div>
-
-      <div class="form-group">
-    <label for="design">Study Design <i>(include sample size and power calculation if applicable)</i>:</label>
-     <textarea class="form-control" rows="5" id="design" name="design"></textarea>
-    </div>
-
-     <div class="form-group">
-    <label for="protocol">Will data be gathered under your existing protocol?  If so, please specify protocol number:</label>
-     <textarea class="form-control" rows="5" id="protocol" name="protocol"></textarea>
-     </div>
-
-          <div class="form-group">
-    <label for="pheno">Are you requesting clinical phenotyping services from the TGAC study team?  If so, please describe:</label>
-     <textarea class="form-control" rows="5" id="pheno" name="pheno"></textarea>
-     </div>
-
-    <div class="form-group">
-    <label for="ror">Will you return genetic results to participants?  Please describe:</label>
-     <textarea class="form-control" rows="5" id="ror" name="ror"></textarea>
-     </div>
-
-    <div class="form-group">
-    <label for="references">Relevant References (if any):</label>
-     <textarea class="form-control" rows="5" id="references" name="references"></textarea>
-     </div>
-
-       <div class="checkbox">
-    <label><input type="checkbox" name="isreviewed" required>I affirm that this project has been reviewed and approved by Research Investigator listed above.   Both Research Investigator and Requester will receive an email copy of this submitted form.</label>
-  </div>
-
-
-    <button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
-      <!--
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="title">Project Title:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="title">
-    </div>
-  </div>
-
-     <div class="form-group">
-    <label class="control-label col-sm-2" for="name">Principal Investigator:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="name">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Email:</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Password:</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
-  </div>
-  </div>
-</form>
-  </div> -->
-
-
-
-                <!--
-            <h4>How should I cite discoveries made using TGAC data?</h4>
-            <p>We request that any use of data obtained from the TGAC browser be cited in publications using the following format:</p>
-            <ul>
-              <li><em>The Genomic Ascertainment Cohort &#40;TGAC&#41;, Bethesda, MD &#40;URL: http://tgac.nhgri.nih.gov&#41; &#91;date &#40;month, year&#41; accessed&#93;</em>.</li>
-            </ul>
-
-            <h4>I have identified a rare variant in TGAC that I believe is associated with a specific clinical phenotype. What phenotype data are available for these individuals?</h4>
-            <p>This is the intent and strength of TGAC, as compared to other databases &#45; we very much want to provide these data to you. Some phenotype data are already collected. The data dictionary for ClinSeq participants is located at (link to data dictionary page).</p>
-
-            <h4>What genome build is the TGAC data based on?</h4>
-            <p>All data are based on GRCh37/hg19.</p>
-
-            <h4>What version of dbSNP was used to annotate variants?</h4>
-            <p>dbSNP 144.</p>
-
-            <h4>What version of Gencode was used to annotate variants?</h4>
-            <p>Version 27 (annotated with VEP version 90).</p>
-
-            <h4>What are the restrictions on data usage?</h4>
-            <p>All data here are released under a <a href="http://www.wellcome.ac.uk/stellent/groups/corporatesite/@policy_communications/documents/web_document/wtd003207.pdf" target="_blank">Fort Lauderdale Agreement</a> for the benefit of the intramural biomedical community. See the <a href="/terms">Terms of Use</a> page for details.</p>
-
-            <h4>How do I contact the TGAC team if I wish to propose an evaluation of a sample or a patient from this dataset?</h4>
-            <p>If you find a variant in this dataset and have a research project that you would like to propose, please send a brief (&#60;1 page) proposal of the design of the experiment to Drs. <a href="mailto:lesb@mail.nih.gov">Biesecker</a> and <a href="mailto:siegelr@mail.nih.gov">Siegel</a>.</p>
-            -->
-
-            </div>
-        </div>
-    </div>
-
-!<!--
-    <div class="container" style="font-size: 16px;">
-        <h1>Frequently Asked Questions</h1>
-        <h2>General</h2>
-        <ul class="media-list">
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">How should I cite discoveries made using gnomAD data?</h4>
-                    Please cite the ExAC flagship paper available <a href="http://www.nature.com/nature/journal/v536/n7616/full/nature19057.html">here</a>.
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">I have identified a rare variant in gnomAD that I believe is associated with a specific clinical phenotype. What phenotype data are available for these individuals?</h4>
-                    Most of the individuals who have contributed data to gnomAD were not fully consented for phenotype data sharing, and unfortunately at this time we are typically unable to provide any information about the clinical status of variant carriers. We have made every effort to exclude individuals with severe pediatric diseases from the gnomAD data set, and certainly do not expect our data set to be <i>enriched</i> for such individuals, but we typically cannot rule out the possibility that some of our participants do actually suffer from your disease of interest.
-                    <br><br>
-        
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">Can I get access to individual-level genotype data from gnomAD?</h4>
-                    Many of the samples in gnomAD have individual-level sequencing data deposited in <a href="http://www.ncbi.nlm.nih.gov/gap">dbGaP</a>, and these can be accessed by <a href="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=login">applying through that repository</a>. However, many other samples come from unpublished cohorts or from samples not in dbGaP. There is not currently any mechanism to systematically obtain individual-level genotype data from the database as a whole. Making this possible would require a truly staggering amount of paperwork, and we'd rather spend that time generating larger data sets for the community to use.
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">What are the restrictions on data usage?</h4>
-                    There are no restrictions or embargoes on the publication of results derived from the gnomAD database. However, we encourage people to <a href="mailto:exomeconsortium@gmail.com">check with the consortium</a> before embarking on large-scale analyses, to see if we already have something currently underway that overlaps with your plans; generally, we prefer to collaborate with users rather than compete with them. The data are available under the <a href="http://opendatacommons.org/licenses/odbl/1.0/">ODC Open Database License (ODbL)</a> (summary available <a href="http://www.opendatacommons.org/licenses/odbl/1-0/summary/">here</a>): you are free to share and modify the gnomAD data so long as you attribute any public use of the database, or works produced from the database; keep the resulting data-sets open; and offer your shared or adapted version of the dataset under the same ODbL license.
-                </div>
-            </li>
-        </ul>
-        <h2>Technical details</h2>
-        <ul class="media-list">
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">What genome build is the gnomAD data based on?</h4>
-                    All data are based on <a href="ftp://ftp.broadinstitute.org/pub/seq/references/Homo_sapiens_assembly19.fasta">GRCh37/hg19</a>
-                </div>
-            </li>
-            <li class="media">
-                
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">What version of Gencode was used to annotate variants?</h4>
-                    Version 19 (annotated with VEP version 85).
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">Why does the browser seem to disagree with the gnomAD VCF at this multiallelic site?</h4>
-                    Due to the limitations of the VCF format, multi-allelic variants are put together on one VCF line.
-                    This inevitably adds complexity to otherwise simple variants,
-                    and thus when parsing onto the browser, we apply a <a href="http://www.cureffi.org/2014/04/24/converting-genetic-variants-to-their-minimal-representation/">minimal representation</a> script.
-                    For instance, a variant whose REF is GC and ALT alleles are TC,G - the first ALT allele is actually a SNP and will be represented in the browser as G->T.
-                </div>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">Are all the individuals in the <a href="http://evs.gs.washington.edu/EVS/">Exome Variant Server</a> included?</h4>
-                    No. We were not given permission from dbGaP to include individuals from several of the cohorts included in the NHLBI's Exome Sequencing Project. As a result, genuine rare variants that are present in the EVS may not be observed in gnomAD.
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">Do the cancer samples in the database include tumor exomes, or is this from germline samples only?</h4>
-                    All of the "cancer" samples in the current release of ExAC are blood ("germline") samples from TCGA. We excluded any sample labeled as tumor. However, note that some sample/label swaps may have occurred in TCGA; in addition, it is possible that in some patients the blood samples are contaminated by circulating tumor cells.
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">What populations are represented in the ExAC data?</h4>
-                    <table border="1" cellspacing="50" cellpadding="50" width="544">
-                        <tbody align="center">
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        <strong>Population</strong>
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        <strong>Exomes</strong>
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        <strong>Genomes</strong>
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        <strong>Total</strong>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        African/African American (AFR)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        7,652
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        4,368
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        12,020
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        Latino (AMR)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        16,791
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        419
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        17,210
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        Ashkenazi Jewish (ASJ)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        4,925
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        151
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        5,076
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        East Asian (EAS)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        8,624
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        811
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        9,435
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        Finnish (FIN)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        11,150
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        1,747
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        12,897
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        Non-Finnish European (NFE)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        55,860
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        7,509
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        63,369
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        South Asian (SAS)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        15,391
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        0
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        15,391
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        Other (OTH)
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        2,743
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        491
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        3,234
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="125" valign="top">
-                                    <p>
-                                        <strong>Total</strong>
-                                    </p>
-                                </td>
-                                <td width="109" valign="top">
-                                    <p>
-                                        123,136
-                                    </p>
-                                </td>
-                                <td width="113" valign="top">
-                                    <p>
-                                        15,496
-                                    </p>
-                                </td>
-                                <td width="96" valign="top">
-                                    <p>
-                                        <strong>138,632</strong>
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </li>
-            <li class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">What ethnicities are represented in the "other" population?</h4>
-                   Individuals were classified as "other" if they did not unambiguously cluster with the major populations (i.e. NFE, FIN, AFR, SAS, EAS, ASJ or AMR) in a principal component analysis (PCA).
-                </div>
-            </li>
-         </ul>
-    </div>
-    -->
 {% endblock %}

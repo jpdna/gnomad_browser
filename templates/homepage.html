@@ -1,26 +1,24 @@
 {% extends "layout.html" %}
 {% block body %}
-    <script>
-        $('#navbar_form_container').hide();
-    </script>
-    <div class="container">
-        <h1 id="home-title">The Genome Ascertainment Cohort (TGAC) Browser <sup><font color="red"><i>Beta</i></font></sup></h1>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div id="home-searchbox">
-                    <form action="/awesome">
-                        <input type="submit" style="display: none;"/>
-                        <input id="home-searchbox-input" name="query" class="form-control input-lg awesomebar" type="text" placeholder="Search for a gene or variant or region"/>
-                        <input type="submit" style="position: absolute; left: -9999px"/>
-                    </form>
-                    <p class="text-muted">
-                        Example - Gene: <a href="/awesome?query=PCSK9">PCSK9</a>,
-                        Variant: <a href="/variant/1-55505647-G-T">1-55505647-G-T</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+<script>
+	$('#navbar_form_container').hide();
+</script>
+
+<div class="container">
+	<h1 id="home-title">The Genome Ascertainment Cohort (TGAC) Browser <sup style="color: red; font-weight: 300; font-style: italic;">Beta</sup></h1>
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="home-searchbox">
+				<form action="/awesome" role="search">
+					<input type="submit" style="display: none;"/>
+					<input type="text" id="home-searchbox-input" name="query" class="form-control input-lg awesomebar" maxlength="100" placeholder="Search for a gene, transcript, variant, or region"/>
+					<input type="submit" style="position: absolute; left: -9999px"/>
+				</form>
+				<p class="text-muted">Examples - Gene: <a href="/awesome?query=PCSK9">PCSK9</a>, Variant: <a href="/variant/1-55505647-G-T">1-55505647-G-T</a></p>
+			</div>
+		</div>
+	</div>
         <!--
         <div class="row" style="font-size: 16px;">
             <div class="col-md-8">
@@ -52,32 +50,32 @@
     </div>
      -->
 
-             <div class="row" style="font-size: 16px;">
-            <div class="col-md-8">
-                <h3> <a href="/about" target="_blank" style="color: black;">About <i><strong>The Genomic Ascertainment Cohort</strong></i> (TGAC) Browser Beta</a></h3>
-                <div>
-                    <p>TGAC is a data resource that aims to improve our understanding of the phenotypic consequence of genetic variation.  Exome and genome data from patients in contributing cohorts are available to view in aggregate via this browser.  This project is designed to enable further study of individuals via genomic ascertainment without prior knowledge of phenotype.</p>
-                    <p>The initial dataset included in this beta release of the TGAC Browser comprises exomes from 938 participants in the NHGRI-sponsored ClinSeq® study.  We plan to add more exome and genome data from other investigators soon.  See <a href="/about" target="_blank">“About The Genomic Ascertainment Cohort”</a></i> for information about this effort. This project is a collaboration between NHGRI (Les Biesecker) and NIAMS (Richard Siegel).</p>
-                    <p>All data here are released under a <a href="https://www.genome.gov/pages/research/wellcomereport0303.pdf">Fort Lauderdale Agreement</a> for the benefit of the IRP community. Please read and understand that agreement before using the data.</p>
-                   <p>Our team will facilitate the use of TGAC for your proposed project, including the process of contacting the individuals identified as having variants of interest.  If you have a research project that you would like to propose, please complete the <a href="/application" target="_blank">project proposal form</a>.</p> 
-                    <p>NIH gratefully acknowledges Daniel MacArthur and the Broad Institute for sharing the gnomAD web architecture with us to support this pilot.</p>
-                    <!--
-                    <p>This  project is designed to make exome and genome data from intramural patient cohorts as well as external collaborators such as INOVA more widely available and to facilitate genomic ascertainment research studies, both basic and clinical, within the Intramural Research Program (IRP).</p>
-                    <p>The initial dataset included in this beta release of the TGAC Browser comprises exomes from 938 participants in the NHGRI-sponsored ClinSeq<sup>&reg;</sup> study<sup>&#9733;</sup>. Nearly all of them are unrelated. We plan to add more exome and genome data from other investigators soon. Our goal here is to pilot approaches to genomic ascertainment research studies in the IRP. See <a href="/about" target="_blank">&ldquo;About <i>The Genomic Ascertainment Cohort</i>&rdquo;</a> for information about this effort. This project is a collaboration between NHGRI (Les Biesecker) and  NIAMS (Richard Siegel).</p>
-                    <p>All data here are released under a <a href="https://www.genome.gov/pages/research/wellcomereport0303.pdf">Fort Lauderdale Agreement</a> for the benefit of the IRP community. Please read and understand that agreement before using the data.</p>
-                    <p>NIH gratefully acknowledges Daniel MacArthur and the Broad Institute for sharing the gnomAD  web architecture with us to support this pilot.</p>
-                    <p class="note"><sup>&#9733;</sup> Note that ClinSeq data are also available to researchers through dbGAP. The initial publication describing ClinSeq is PMID 19602640 &#38; PMCID PMC2752125</p>
-                    -->
+	<div class="row">
+		<div class="col-md-8">
+			<h3><a href="/about" style="color: black;">About <em><strong>The Genomic Ascertainment Cohort</strong></em> (TGAC) Browser</a></h3>
+			<div>
+				<p>TGAC is a data resource that aims to improve our understanding of the phenotypic consequence of genetic variation.  Exome and genome data from patients in contributing cohorts are available to view in aggregate via this browser.  This project is designed to enable further study of individuals via genomic ascertainment without prior knowledge of phenotype.</p>
+				<p>The initial dataset included in this beta release of the TGAC Browser comprises exomes from 938 participants in the NHGRI-sponsored ClinSeq&reg; study.  We plan to add more exome and genome data from other investigators soon.  See <a href="/about">“About The Genomic Ascertainment Cohort”</a> for information about this effort.  This project is a collaboration between NHGRI (<a href="https://irp.nih.gov/pi/leslie-biesecker" target="_blank">Les Biesecker <i class="fa fa-external-link" aria-hidden="true"></i></a>) and NIAMS (<a href="https://irp.nih.gov/pi/richard-siegel" target="_blank">Richard Siegel <i class="fa fa-external-link" aria-hidden="true"></i></a>).</p>
+				<p>All data here are released under a <a href="https://www.genome.gov/pages/research/wellcomereport0303.pdf">Fort Lauderdale Agreement <i class="fa fa-external-link" aria-hidden="true"></i></a> for the benefit of the IRP community. Please read and understand that agreement before using the data.</p>
+				<p>Our team will facilitate the use of TGAC for your proposed project, including the process of contacting the individuals identified as having variants of interest.  If you have a research project that you would like to propose, please complete the <a href="/application">project proposal form</a>.</p> 
+				<p>NIH gratefully acknowledges Daniel MacArthur and the Broad Institute for sharing the gnomAD Web architecture with us to support this pilot.</p>
 
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h3 align="center">Recent News</h3>
-                <p>Initial release of the TGAC beta browser and dataset, <span class="date-news">March 1, 2018</span></p>
-            </div>
-        </div>
-    </div>
+				<!--
+				<p>This  project is designed to make exome and genome data from intramural patient cohorts as well as external collaborators such as INOVA more widely available and to facilitate genomic ascertainment research studies, both basic and clinical, within the Intramural Research Program (IRP).</p>
+				<p>The initial dataset included in this beta release of the TGAC Browser comprises exomes from 938 participants in the NHGRI-sponsored ClinSeq<sup>&reg;</sup> study<sup>&#9733;</sup>. Nearly all of them are unrelated. We plan to add more exome and genome data from other investigators soon. Our goal here is to pilot approaches to genomic ascertainment research studies in the IRP. See <a href="/about" target="_blank">&ldquo;About <i>The Genomic Ascertainment Cohort</i>&rdquo;</a> for information about this effort. This project is a collaboration between NHGRI (Les Biesecker) and  NIAMS (Richard Siegel).</p>
+				<p>All data here are released under a <a href="https://www.genome.gov/pages/research/wellcomereport0303.pdf">Fort Lauderdale Agreement</a> for the benefit of the IRP community. Please read and understand that agreement before using the data.</p>
+				<p>NIH gratefully acknowledges Daniel MacArthur and the Broad Institute for sharing the gnomAD  web architecture with us to support this pilot.</p>
+				<p class="note"><sup>&#9733;</sup> Note that ClinSeq data are also available to researchers through dbGAP. The initial publication describing ClinSeq is PMID 19602640 &#38; PMCID PMC2752125</p>
+					-->
 
+			</div>
+		</div>
 
+		<div class="col-md-4">
+			<h3 align="center">Recent News</h3>
+			<p>Initial release of the TGAC beta browser and dataset - <span class="date-news">March 1, 2018</span></p>
+		</div>
+	</div>
+</div>
 
 {% endblock %}

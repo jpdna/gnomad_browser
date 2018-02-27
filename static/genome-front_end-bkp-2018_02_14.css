@@ -1,0 +1,187 @@
+/*
+================================================
+Created by Mark Fredriksen
+Last updated on 1-31-2018
+Notes: This stylesheet applies the genome.gov (NHGRI/DIR) styles to the GnomAD application and overrides the existing Bootstrap and GnomAD application styles.
+================================================
+Contents:
+  01 Sensible Defaults
+  02 Typography
+  03 Basic Layout
+  04 Header
+  05 Footer
+  06 Main Content
+================================================
+*/
+
+
+/* 01 Sensible Defaults
+--------------------------------------------- */
+
+
+/* 02 Typography
+--------------------------------------------- */
+.navbar-default {
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 0.033em;
+}
+
+.note {
+	font-size: .8em;
+}
+
+
+/* 03 Basic Layout
+--------------------------------------------- */
+h4, .h4, h5, .h5, h6, .h6 {
+	margin-top: 1em;
+}
+
+
+/* 04 Header
+--------------------------------------------- */
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: underline;
+}
+
+@media (min-width:768px) {
+	.navbar-header {
+		width: 100%;
+	}
+}
+
+.navbar-brand {
+    /*Mark Change float: left; */
+	padding: 15px 15px;
+	font-size: 18px;
+	line-height: 20px;
+    /*Mark Change height: 50px */
+    
+	/* Mark Add*/
+	position: relative;
+	min-height: 50px;
+	border: red 1px solid;
+}
+
+.navbar-default {
+	background-color: #c5dadf;
+	background-image: -webkit-linear-gradient(#e6f0f2, #c5dadf);
+	background-image: -o-linear-gradient(#e6f0f2, #c5dadf);
+	background-image: linear-gradient(#e6f0f2, #c5dadf);
+	border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	position: relative;
+	border: green 1px solid;
+}
+
+.logo {
+	font-size: 1em;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.logo img {
+	/*display: block;*/
+	border: 0 none;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	width: auto;
+}
+
+#navbar_form_container {
+	z-index:100;
+}
+
+@media (min-width:768px) {
+	.navbar-nav .navbar-right:last-child {
+		/* Mark Change margin-right: -15px;*/
+	}
+	.logo {
+		padding-left: 0em;
+	}
+	h3 { /* ?????????? */
+   text-align: left;
+	}
+}
+
+@media (max-width:767px) {
+	#navbar_form_container.col-xs-5 {
+		width: 100%;
+	}
+	.navbar-brand {
+		max-width: 75%;
+	}
+	.navbar-nav a {
+		border-left: .5em solid transparent;
+		display: block;
+		padding: .5em;
+		position: relative;
+	}
+	.navbar-nav a:hover {
+		border-left: .5em solid #5f9baf;
+	}
+	.nav>li>a:hover, .nav>li>a:focus {
+		text-decoration: none;
+	}
+	h1, h3 {
+		text-align: center;
+	}
+}
+
+
+/* 05 Footer
+--------------------------------------------- */
+#footer {
+	margin: 1em 0 0em;
+	width: 100%;
+	border-top: 1px dashed #bbbbbb;
+	color: #0d447d;
+	background-color: #e5eff1;
+	text-align: center;
+}
+
+#footer ul {
+	margin: 0;
+	padding: 0;
+}
+
+#footer .logos li {
+	display: inline-block;
+	padding: 0 2em;
+}
+
+#footer .logos img {
+	margin: 1em 0;
+	vertical-align: middle;
+}
+
+#footer .links ul {
+	list-style: outside none none;
+	text-align: center;
+}
+
+#footer .links li {
+	border-right: 1px solid #666;
+	display: inline-block;
+	margin: 0.5em 0 3.5em;
+	padding: 0 0.5em;
+}
+
+#footer .links li:last-child {
+	border-right: none;
+}
+
+
+/* 06 Main Content
+--------------------------------------------- */
+.date-news {
+	color: #87a8af;
+}
+
+.note {
+	margin: 2.5em 0 0;
+	color: #87a8af;
+}
