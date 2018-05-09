@@ -1248,36 +1248,42 @@ def submit_page():
     isreviewed = request.form['isreviewed']
    
     
-
+    if(isreviewed=="on"):
+      confirmed_status = "yes"
+    else:
+      confirmed_status = "no"
     
-    msgText = ("Proposal form submitted to TGAC on " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M") + "\n\n" +
-              "Requester First Name:\n" + requesterFirstName + "\n\n" +
-              "Requester Last Name:\n" + requesterLastName  + "\n\n" +
-              "Requester Phone:\n" + requesterPhone + "\n\n" +
-              "Requester Email:\n" + requesterEmail + "\n\n"  +
-              "Research Investigator First Name:\n" + riFirstName + "\n\n" +
-              "Research Investigator Last Name:\n" + riLastName  + "\n\n" +
-              "Research Investigator Phone:\n" + riPhone + "\n\n" +
-              "Research Investigator Email:\n" + riEmail + "\n\n" +
-              "Institute:\n" + institute + "\n\n"  +
-              "Project Title:\n" + projectTitle + "\n\n"
-              "Background:\n" + background + "\n\n" +
-              "Objectives:\n" + objectives + "\n\n" +
-              "Variant:\n" + variants + "\n\n" + 
-              "Design:\n" + design + "\n\n" +
-              "Protocol:\n" + protocol + "\n\n" + 
-              "Phenotype:\n" + pheno + "\n\n" +
-              "Return Of Results:\n" + ror + "\n\n" +
-              "References:\n" + references + "\n\n" +
-              "IsReviewed:\n" + isreviewed + "\n\n")
-    
+    msgText = ("<html><body> " + "<p><strong>" + " Proposal form submitted to TGAC on " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M") + "</strong></p>" +  "\n\n" +
+              "<p><strong>" + "Requestor First Name:\n"  + "</strong><br>" + requesterFirstName + "</p>" + "\n\n"
+              "<p><strong>" + "Requestor Last Name:\n" + "</strong><br>" + requesterLastName  + "</p>" + "\n\n" +
+              "<p><strong>" + "Requestor Phone:\n" + "</strong><br>" + requesterPhone + "</p>" + "\n\n" +
+              "<p><strong>" + "Requestor Email:\n" + "</strong><br>" + requesterEmail + "</p>" + "\n\n"  +
+              "<p><strong>" + "Research Investigator First Name:\n" + "</strong><br>" + riFirstName + "</p>" + "\n\n" +
+              "<p><strong>" + "Research Investigator Last Name:\n" + "</strong><br>" + riLastName  + "</p>" + "\n\n" +
+              "<p><strong>" + "Research Investigator Phone:\n" + "</strong><br>" + riPhone + "</p>" + "\n\n" +
+              "<p><strong>" + "Research Investigator Email:\n" + "</strong><br>" + riEmail + "</p>" + "\n\n" +
+              "<p><strong>" + "Institute:\n" + "</strong><br>" + institute + "</p>" + "\n\n"  +
+              "<p><strong>" +  "Project Title:\n" + "</strong><br>" + projectTitle + "</p>" + "\n\n" +
+              "<p><strong>" + "Background:\n" + "</strong><br>" + background + "</p>" + "\n\n" +
+              "<p><strong>" + "Objectives:\n" + "</strong><br>" + objectives + "</p>" + "\n\n" +
+              "<p><strong>" + "Variant:\n" + "</strong><br>" + variants + "</p>" + "\n\n" + 
+              "<p><strong>" + "Design:\n" + "</strong><br>" + design + "</p>" + "\n\n" +
+              "<p><strong>" + "Protocol:\n" + "</strong><br>" + protocol + "</p>" + "\n\n" + 
+              "<p><strong>" + "Phenotype:\n" + "</strong><br>" + pheno + "</p>" + "\n\n" +
+              "<p><strong>" + "Return Of Results:\n" + "</strong><br>" + ror + "</p>" + "\n\n" +
+              "<p><strong>" +"References:\n" + "</strong><br>" + references + "</p>" + "\n\n" +
+              "<p><strong>" + "The Requestor affirms that this project has been reviewed and approved by Research Investigator listed above\n" + "</strong><br>" + confirmed_status + "</p>" + "\n\n</body</html>")
 
-    msg = MIMEText(msgText)
+              #"<p><strong>" + "Is reviewed and approved by Research Investigator (\"on\" means yes):\n" + "</strong><br>" + isreviewed + "</p>" + "\n\n</body</html>")
+              
 
-    tgac_email = "tgac@mail.nih.gov"
+    msg = MIMEText(msgText, 'html')
+
+    tgac_email = "tgac@nih.gov"
+    #tgac_email = "tgac_test@nih.gov"    
 
     me = tgac_email
-    recipients = [tgac_email, requesterEmail]
+    recipients = [tgac_email, requesterEmail, "justin.paschall@nih.gov"]
     if riEmail != "":
       recipients.append(riEmail)
 

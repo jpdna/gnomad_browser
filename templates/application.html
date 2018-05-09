@@ -4,32 +4,33 @@
 <div class="container">
 	<h1>Research Proposal Application</h1>
 
-  <p>We ask that all investigators seeking to use TGAC complete the project form found below.  Please provide as much detail as necessary to convey the relevant information for your proposed project.</p>
+  <p>If you would like to propose a project to evaluate variants you have identified in the TGAC browser, please complete the form below. Please note that if you have a clinical protocol it is expected that research conducted with TGAC participants will be performed under that clinical protocol.  For basic science researchers who do not have a clinical protocol, the TGAC team may be able to assist with basic phenotyping or help the investigator find an applicable clinical protocol.</p>
+   <p>Please provide as much detail as necessary to convey the relevant information for your proposed project.  The TGAC team will contact you for further discussion once the application is received.</p>
 
 	<form action="/submit" method="post">
-		<h4 style="color:#5f9baf;">Requester</h4>
+		<h4 style="color:#5f9baf;">Requestor</h4>
   	<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="requesterFirstName">First Name:</label>
-	      <input type="text" class="form-control" id="requesterFirstName" placeholder="Enter Requester First Name" name="requesterFirstName">
+	      <input type="text" class="form-control" id="requesterFirstName" placeholder="Enter Requestor First Name" name="requesterFirstName" required>
   	  </div>
 	    <div class="form-group col-md-6">
 	      <label for="requesterLastName">Last Name:</label>
-  	    <input type="text" class="form-control" id="requesterLastName" placeholder="Enter Requester Last Name" name="requesterLastName">
+  	    <input type="text" class="form-control" id="requesterLastName" placeholder="Enter Requestor Last Name" name="requesterLastName" required>
 	    </div>
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="requesterEmail">E-mail Address:</label>
-				<input type="text" class="form-control" id="requesterEmail" placeholder="Enter Requester E-mail Address" name="requesterEmail">
+				<input type="text" class="form-control" id="requesterEmail" placeholder="Enter Requestor E-mail Address" name="requesterEmail" required>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="requesterPhone">Phone Number:</label>
-				<input type="text" class="form-control" id="requesterPhone" placeholder="Enter Requester Phone Number" name="requesterPhone">
+				<input type="text" class="form-control" id="requesterPhone" placeholder="Enter Requestor Phone Number" name="requesterPhone" required>
 			</div>
 		</div>
 
-		<h4 style="color:#5f9baf;">Research Investigator (<em>if different than Requester</em>)</h4>
+		<h4 style="color:#5f9baf;">Research Investigator (<em>if different than Requestor</em>)</h4>
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="riFirstName">First Name:</label>
@@ -54,41 +55,41 @@
 		<h4 style="color:#5f9baf;">Institute or Center (IC)</h4>
 		<div class="form-group col-lg-12">
 			<label for="institute" class="sr-only">Institute or Center</label>
-			<input type="text" class="form-control" id="institute" placeholder="Examples: NIH/NHGRI or Inova Translational Medicine Institute" name="institute">
+			<input type="text" class="form-control" id="institute" placeholder="Examples: NIH/NHGRI or Inova Translational Medicine Institute" name="institute" required>
 		</div>
 
 		<h4 style="color:#5f9baf;">Project Information</h4>
 		<div class="form-group col-lg-12">
 			<label for="projectTitle">Project Title:</label>
-			<textarea class="form-control" rows="5" id="projectTitle" name="projectTitle"></textarea>
+			<textarea class="form-control" rows="5" id="projectTitle" name="projectTitle"  required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
 			<label for="background">Background:</label>
-			<textarea class="form-control" rows="5" id="background" name="background"></textarea>
+			<textarea class="form-control" rows="5" id="background" name="background"  required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
 			<label for="objectives">Objectives:</label>
-			<textarea class="form-control" rows="5" id="objectives" name="objectives"></textarea>
+			<textarea class="form-control" rows="5" id="objectives" name="objectives"  required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
 			<label for="variants">Variant or Variants of Interest:</label>
-			<textarea class="form-control" rows="5" id="variants" name="variants"></textarea>
+			<textarea class="form-control" rows="5" id="variants" name="variants" required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
 			<label for="design">Study Design (<em>include sample size and power calculation if applicable</em>):</label>
-			<textarea class="form-control" rows="5" id="design" name="design"></textarea>
+			<textarea class="form-control" rows="5" id="design" name="design" required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
 			<label for="protocol">Will Data be gathered under your existing protocol?  If so, please specify protocol number:</label>
-			<textarea class="form-control" rows="5" id="protocol" name="protocol"></textarea>
+			<textarea class="form-control" rows="5" id="protocol" name="protocol" required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
-			<label for="pheno">Are you requesting clinical phenotyping services from the TGAC study team?  If so, please describe:</label>
-			<textarea class="form-control" rows="5" id="pheno" name="pheno"></textarea>
+			<label for="pheno">If you do not have an existing protocol, are you requesting clinical phenotyping services from the TGAC study team? If so, please describe:</label>
+			<textarea class="form-control" rows="5" id="pheno" name="pheno" required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
-			<label for="ror">Will you return genetic results to participants?  Please describe:</label>
-			<textarea class="form-control" rows="5" id="ror" name="ror"></textarea>
+			<label for="ror">Will you return results to participants?  Please describe:</label>
+			<textarea class="form-control" rows="5" id="ror" name="ror" required></textarea>
 		</div>
 		<div class="form-group col-lg-12">
 			<label for="references">Relevant References (<em>if any</em>):</label>
@@ -97,7 +98,7 @@
 
 		<div class="form-group col-lg-12 checkbox">
 			<input type="checkbox" name="isreviewed" required>
-			<label class="form-check-label" for="inlineCheckbox1">I affirm that this project has been reviewed and approved by Research Investigator listed above.  Both Research Investigator and Requester will receive an E-mail copy of the submitted form.</label>
+			<label class="form-check-label" for="inlineCheckbox1">I affirm that this project has been reviewed and approved by Research Investigator listed above.  Both Research Investigator and Requestor will receive an E-mail copy of the submitted form.</label>
 		</div>
 
 		<button type="submit" class="btn btn-primary">Submit</button>
